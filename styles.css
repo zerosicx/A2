@@ -7,6 +7,18 @@ body {
   font-size: 0.8rem;
 } */
 
+#title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+#submitButton{
+  font-size: 1rem;
+  padding: 2% 4%;
+  position: relative;
+  bottom: 10%;
+}
+
 .justified {
   text-align: center;
 }
@@ -15,18 +27,42 @@ body {
   border: 0;
 }
 
+.intro-text{
+  display: none;
+}
+
+input[type="radio"]{
+  transform: scale(2);
+  margin: 4% 3%;
+}
+
+.radio-label {
+  font-size: 2rem;
+}
+
+/* #ageForm {
+  position: relative;
+  top: 30%;
+} */
+
+select {
+  font-size: 1.2rem;
+  padding: 3%;
+  width: 50%;
+}
+
 /* Grid container styles */
 
 .grid-container {
   display: grid;
   grid-template-columns: 2fr 5fr 2fr;
-  grid-template-rows: 1fr 2fr 0.5fr;
+  grid-template-rows: 1fr 1fr 0.5fr;
   grid-template-areas:
   "arrowPrev header arrowNext"
   "arrowPrev main arrowNext"
   "arrowPrev submit arrowNext";
   background-color: #fafafa;
-  margin: 5% 25%;
+  margin: 10% 25%;
   border-radius: 5%;
   box-shadow: 5px 5px 20px #777;
 }
@@ -55,6 +91,7 @@ body {
 
 .main-box {
   grid-area: main;
+  /* padding: 15%; */
 }
 
 .submit-box {
@@ -67,7 +104,7 @@ body {
     "header header header"
     "main main main"
     "submit submit submit";
-    margin: 10% 10%;
+    margin: 10% 20%;
   }
 
   .arrowNext-box, .arrowPrev-box {

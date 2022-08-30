@@ -12,60 +12,79 @@
 
     <!-- Header section: output of text and subtitle changes based on the activePage number -->
     <section class="always-on grid-box header-box">
-      <h1 class="title">Framingham Risk Score Assessment</h1>
-      <p class="subtitle">The Framingham Risk Score is a gender-specific algorithm
-        used to estimate the risk of an individual developing coronary heart disease.</p>
+      <h1 class="title" id="title">Title</h1>
+      <p class="subtitle" id="subtitle"></p>
     </section>
 
-    <section class="arrowPrev-box grid-box">
+    <section class="arrowPrev-box grid-box" id="arrowPrev">
       <p>previous</p>
     </section>
 
-    <section class="arrowNext-box grid-box">
+    <section class="arrowNext-box grid-box" id="arrowNext">
       <p>next</p>
     </section>
 
     <section class="main-box grid-box">
 
-      <p class="intro-text justified">This assessment takes no identifiable personal information. This calculator
-        was created solely for the purpose of education and no information will be unwillingly
-        distributed. Information will be only held temporarily and will be deleted immediately after the assessment.
-        Taking this assessment means you agree with this.</p>
+      <p class="intro-text justified" id="introText"></p>
 
       <fieldset class="borderless" id="ageForm">
-        <select name="ageGroup" id="ageGroup" required>
-          <option value="g1">20-24</option>
-          <option value="g2">25-29</option>
-          <option value="g3">30-34</option>
-          <option value="g4">35-39</option>
-          <option value="g5">40-34</option>
-          <option value="g6">45-49</option>
-          <option value="g7">50-54</option>
-          <option value="g8">55-59</option>
-          <option value="g9">60-64</option>
-          <option value="g10">65-69</option>
-          <option value="g11">70-75</option>
-          <option value="g12">75-79</option>
+        <select name="ageGroup" id="ageGroupSelector" required>
+          <option>20-24</option>
+          <option>25-29</option>
+          <option>30-34</option>
+          <option>35-39</option>
+          <option>40-34</option>
+          <option>45-49</option>
+          <option>50-54</option>
+          <option>55-59</option>
+          <option>60-64</option>
+          <option>65-69</option>
+          <option>70-75</option>
+          <option>75-79</option>
         </select>
       </fieldset>
 
       <fieldset class="borderless" id="genderForm">
-        <input type="radio" name="femaleRadio" value="Female">
-        <label for="femaleRadio"> Female </label>
-        <input type="radio" name="maleRadio" value="Male">
-        <label for="maleRadio"> Male </label>
+        <input type="radio" name="gender" value="Female">
+        <label class="radio-label" for="femaleRadio"> Female </label>
+        <br>
+        <input type="radio" name="gender" value="Male">
+        <label class="radio-label" for="maleRadio"> Male </label>
       </fieldset>
 
       <fieldset class="borderless" id="cholesterolForm">
-
+        <select name="cholesterol" id="cholesterolSelector">
+          <option>Under 160</option>
+          <option>160-199</option>
+          <option>200-239</option>
+          <option>240-279</option>
+          <option>Over 280</option>
+        </select>
       </fieldset>
 
-      <fieldset class="borderless" id="smokingForm">
-
+      <fieldset class="borderless" id="smokerForm">
+        <input type="radio" name="smoker" value="true">
+        <label class="radio-label" for="smokerTrue"> Smoker </label>
+        <br>
+        <input type="radio" name="smoker" value="false">
+        <label class="radio-label" for="smokerFalse"> Non-Smoker </label>
       </fieldset>
 
       <fieldset class="borderless" id="bpForm">
-
+        <input type="radio" name="bpTreated" value="true">
+        <label class="radio-label" for="smokerTrue"> Treated </label>
+        <input type="radio" name="bpTreated" value="false">
+        <label class="radio-label" for="treatedFalse"> Untreated </label>
+        <br>
+        <br>
+        <select name="bplevel" id="bpSelector">
+          <option>Under 120</option>
+          <option>120-129</option>
+          <option>130-139</option>
+          <option>140-159</option>
+          <option>Over 160</option>
+        </select>
       </fieldset>
 
       <div class="results" id="resultPage">
@@ -74,10 +93,10 @@
     </section>
 
     <section class="submit-box grid-box">
-      <button type="button" name="submitButton">Start Assessment</button>
+      <button onclick="nextPage()" type="button" name="submitButton" id="submitButton">Start Assessment</button>
     </section>
 
-
+    <script type="text/javascript" src="script.js"></script>
 
   </div>
 
