@@ -1,0 +1,66 @@
+
+body {
+  font-family: sans-serif;
+}
+
+/* p {
+  font-size: 0.8rem;
+} */
+
+/* Grid container styles */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 5fr 2fr;
+  grid-template-rows: 2fr 3fr 1fr;
+  grid-template-areas:
+  "arrowPrev header arrowNext"
+  "arrowPrev main arrowNext"
+  "arrowPrev submit arrowNext";
+  background-color: #ededed;
+  margin: 10% 20%;
+  border-radius: 5%;
+}
+
+.grid-box {
+  text-align: center;
+  padding: 5%;
+}
+
+.arrowNext-box, .arrowPrev-box {
+  margin: auto;
+  color: #969696;
+}
+
+.arrowPrev-box {
+  grid-area: arrowPrev;
+}
+
+.arrowNext-box{
+  grid-area: arrowNext;
+}
+
+.header-box {
+  grid-area: header;
+}
+
+.main-box {
+  grid-area: main;
+}
+
+.submit-box {
+  grid-area: submit;
+}
+
+@media screen and (max-width: 800px){
+  .grid-container {
+    grid-template-areas:
+    "header header header"
+    "main main main"
+    "submit submit submit";
+  }
+
+  .arrowNext-box, .arrowPrev-box {
+    display: none;
+  }
+}
